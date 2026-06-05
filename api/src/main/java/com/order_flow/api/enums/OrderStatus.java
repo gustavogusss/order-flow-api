@@ -1,6 +1,6 @@
 package com.order_flow.api.enums;
 
-public enum PedidoStatus {
+public enum OrderStatus {
     CREATED,
     PAID,
     PROCESSING,
