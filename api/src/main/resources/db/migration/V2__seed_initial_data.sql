@@ -1,0 +1,90 @@
+INSERT INTO product (
+    id,
+    name,
+    description,
+    price,
+    created_at,
+    updated_at
+)
+VALUES
+(
+    '7c77c89e-85c7-4e17-b97a-d7e42dd6d431',
+    'Coffee',
+    'Fresh black coffee',
+    8.90,
+    NOW(),
+    NOW()
+),
+(
+    '1c1a5e31-f8b5-4a2c-beb8-8b7efdb2b29d',
+    'Latte',
+    'Coffee with steamed milk',
+    12.50,
+    NOW(),
+    NOW()
+),
+(
+    '9efb8d5a-4f56-40f3-92e7-f5344f3e9d75',
+    'Croissant',
+    'Butter croissant',
+    14.90,
+    NOW(),
+    NOW()
+);
+
+INSERT INTO orders (
+    id,
+    status,
+    created_at,
+    updated_at,
+    finalized_at
+)
+VALUES
+(
+    '89e06c0c-8af6-4937-9b66-d8b57eb487f1',
+    'CREATED',
+    NOW(),
+    NOW(),
+    NULL
+),
+(
+    'c92bcb4e-57d9-4602-a2f8-0a3baf9db9ab',
+    'PAID',
+    NOW(),
+    NOW(),
+    NOW()
+);
+
+INSERT INTO order_item (
+    id,
+    order_id,
+    product_id,
+    quantity,
+    unit_price,
+    created_at
+)
+VALUES
+(
+    'f5fc6740-7d57-4fa3-93e4-98dbfbc4b8d0',
+    '89e06c0c-8af6-4937-9b66-d8b57eb487f1',
+    '7c77c89e-85c7-4e17-b97a-d7e42dd6d431',
+    2,
+    8.90,
+    NOW()
+),
+(
+    'f90a40fc-b9dc-4ec4-9e56-caa8dce2df7d',
+    'c92bcb4e-57d9-4602-a2f8-0a3baf9db9ab',
+    '1c1a5e31-f8b5-4a2c-beb8-8b7efdb2b29d',
+    1,
+    12.50,
+    NOW()
+),
+(
+    '329da59e-c054-4a7f-b7b4-f0e4f0f978d1',
+    'c92bcb4e-57d9-4602-a2f8-0a3baf9db9ab',
+    '9efb8d5a-4f56-40f3-92e7-f5344f3e9d75',
+    2,
+    14.90,
+    NOW()
+);
